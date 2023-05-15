@@ -17,6 +17,14 @@ const typeDefs = gql`
     age: Int!
     nationality: String!
     friends: [User!]
+    favouriteSports: [Sport!]
+  }
+
+  type Sport {
+    id: ID!
+    name: String!
+    minimumPlayers: Int!
+    maximumPlayers: Int!
   }
 
   input CreateUserInput {
