@@ -37,6 +37,7 @@ const typeDefs = gql`
     id: ID!
     name: String!
     age: Int!
+    nationality: String!
   }
 `;
 
