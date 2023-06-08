@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import "./App.css";
+import { useMutation, useQuery } from "@apollo/client";
+import { CREATE_USER, GET_USERS, UPDATE_USER } from "./operations/user";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -19,8 +21,9 @@ function App() {
   });
   const [responseData, setResponseData] = useState({});
   const [users, setUsers] = useState([]);
-
-  // Implement the useQuery and useMutation hook below
+  const { data, refetch } = useQuery(GET_USERS);
+  const [createUser] = useMutation(CREATE_USER);
+  const [updateUser] = useMutation(UPDATE_USER);
 
   const onSubmit = async (data) => {
     const payload = {
@@ -29,7 +32,19 @@ function App() {
       nationality: data.nationality,
     };
 
-    // Make the create & update user GraphQL request below
+    try {
+      if (data.id) {
+        payload.id = data.id;
+        const result = await updateUser({ variables: { input: payload } });
+        setResponseData(result);
+        return;
+      }
+
+      const result = await createUser({ variables: { input: payload } });
+      setResponseData(result);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const selectUser = (user) => {
@@ -41,22 +56,19 @@ function App() {
       return;
     }
 
-    // Uncomment below code once we implemented GET_USER GraphQL query
-    // const selectedUser = data.users.find((user) => user.id === userId);
-    // setValue("id", selectedUser.id);
-    // setValue("name", selectedUser.name);
-    // setValue("age", selectedUser.age);
-    // setValue("nationality", selectedUser.nationality);
-    
+    const selectedUser = data.users.find((user) => user.id === userId);
+    setValue("id", selectedUser.id);
+    setValue("name", selectedUser.name);
+    setValue("age", selectedUser.age);
+    setValue("nationality", selectedUser.nationality);
   };
 
-  // Uncomment below code once we implemented GET_USER GraphQL query
-  // useEffect(() => {
-  //   if (data && data.users) {
-  //     setUsers(data.users);
-  //     setResponseData(data);
-  //   }
-  // }, [data]);
+  useEffect(() => {
+    if (data && data.users) {
+      setUsers(data.users);
+      setResponseData(data);
+    }
+  }, [data]);
 
   return (
     <>
@@ -125,7 +137,7 @@ function App() {
         <div>
           <h2>Result</h2>
           <div>
-            <button type="button" onClick={() => console.log("Get updated user list")}>
+            <button type="button" onClick={() => refetch()}>
               Get Users
             </button>
           </div>

@@ -1,0 +1,41 @@
+#root {
+  width: 100%;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.error {
+  color: red;
+}
+
+.card {
+  padding: 2em;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mx-15 {
+  margin: 0 15px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.user-section {
+  display: flex;
+  justify-content: center;
+}
