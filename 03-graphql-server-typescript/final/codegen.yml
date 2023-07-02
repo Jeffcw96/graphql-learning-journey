@@ -1,0 +1,7 @@
+schema: ./src/schema.ts
+generates:
+  types.ts:
+    plugins:
+      - "@graphql-codegen/typescript"
+      - "@graphql-codegen/typescript-resolvers"
+require: ["ts-node/register"]

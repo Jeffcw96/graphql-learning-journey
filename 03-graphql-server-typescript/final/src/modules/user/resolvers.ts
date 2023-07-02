@@ -1,4 +1,4 @@
-import { Users, Sports } from "../data";
+import { Users } from "../../data";
 
 export const resolvers = {
   Query: {
@@ -9,12 +9,6 @@ export const resolvers = {
       const id = args.id;
       return Users.find((user) => Number(user.id) === Number(id));
     },
-  },
-  User: {
-    favouriteSports: () =>
-      Sports.filter(
-        (sport) => sport.minimumPlayers >= 2 && sport.maximumPlayers <= 4
-      ),
   },
   Mutation: {
     // The object key store in args will be depends on what we define in type-def. If we name it as input then it will be args.input

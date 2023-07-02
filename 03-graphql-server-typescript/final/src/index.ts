@@ -1,10 +1,8 @@
 import { ApolloServer } from "apollo-server";
-import { resolvers } from "./schema/resolvers";
-import { typeDefs } from "./schema/type-defs";
+import { schema } from "./modules";
 
 const server = new ApolloServer({
-  resolvers,
-  typeDefs,
+  schema: schema,
 });
 
 server.listen().then(({ url }) => {
