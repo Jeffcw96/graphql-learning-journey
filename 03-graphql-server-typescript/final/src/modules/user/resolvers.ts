@@ -1,6 +1,7 @@
-import { Users } from "../../data";
+import { Users } from 'src/data/final';
+import { Resolvers } from 'src/modules/schema';
 
-export const resolvers = {
+export const resolvers: Resolvers = {
   Query: {
     users: () => {
       return Users;

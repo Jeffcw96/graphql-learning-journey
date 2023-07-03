@@ -1,6 +1,7 @@
-import { Sports } from "../../data";
+import { Sports } from 'src/data/final';
+import { Resolvers } from 'src/modules/schema';
 
-export const resolvers = {
+export const resolvers: Resolvers = {
   Query: {
     sports: () => {
       return Sports;

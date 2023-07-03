@@ -1,7 +1,11 @@
 schema: ./src/schema.ts
+require:
+  - ts-node/register/transpile-only
+  - tsconfig-paths/register
+  # Adding ts-node is for make sure it doesn't get import issue when referring src/schema.ts as it's the same directory level of graphql server (index.ts)
+  # Adding tsconfig-paths/register to make sure the graphql-codegen doesn't get path alias error when refering the src/modules/*/resolvers files
 generates:
-  types.ts:
+  ./src/modules/schema.d.ts:
     plugins:
-      - "@graphql-codegen/typescript"
-      - "@graphql-codegen/typescript-resolvers"
-require: ["ts-node/register"]
+      - '@graphql-codegen/typescript'
+      - '@graphql-codegen/typescript-resolvers'
