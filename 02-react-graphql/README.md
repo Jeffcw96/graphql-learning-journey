@@ -14,10 +14,10 @@ Final source code is storing in final folder.
 
 ## Basic commands
 
-| Command      | Description                                         |
-| ------------ | --------------------------------------------------- |
-| `yarn dev` | Runs dev server with the HMR locally on port `5173` |
-| `yarn build` | Build your modules into production use |
+| Command         | Description                                         |
+| --------------- | --------------------------------------------------- |
+| `npm run dev`   | Runs dev server with the HMR locally on port `5173` |
+| `npm run build` | Build your modules into production use              |
 
 # Contributing
 

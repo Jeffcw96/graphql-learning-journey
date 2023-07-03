@@ -12,9 +12,9 @@ Final source code is storing in final folder.
 
 ## Basic commands
 
-| Command      | Description                                         |
-| ------------ | --------------------------------------------------- |
-| `yarn start` | Runs dev server with the HMR locally on port `4000` |
+| Command         | Description                                         |
+| --------------- | --------------------------------------------------- |
+| `npm run start` | Runs dev server with the HMR locally on port `4000` |
 
 # Contributing
 
