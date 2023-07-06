@@ -1,6 +1,6 @@
 ## Welcome to JeffDevsLife blog learning journey
 
-In this article, we will be going through the basic for connecting the Query and Mutation from Apollo GraphQL server.
+In this tutorial, we will be going through the basic for connecting the Query and Mutation from Apollo GraphQL server.
 
 It's highly recommended to clone the folder in [tutorial 1](https://github.com/Jeffcw96/graphlq-learning-journey/tree/master/01-apollo-graphql-server/final) and start the GraphQL server locally while we are going through this tutorial
 

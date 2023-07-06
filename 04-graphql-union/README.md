@@ -1,6 +1,6 @@
 ## Welcome to JeffDevsLife blog learning journey
 
-In this tutorial, we will be going through how to ensure our GraphQL resolver is type-safe by using graphql codegen
+In this tutorial, we will be going through how to ensure our handle dynamic GraphQL Query return type with the aid of `Union` and `Interface`
 
 ### To Start
 
