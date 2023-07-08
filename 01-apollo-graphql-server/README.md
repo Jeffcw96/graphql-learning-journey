@@ -1,6 +1,6 @@
 ## Welcome to JeffDevsLife blog learning journey
 
-In this article, we will be going through the basic for creating the Query and Mutation in Apollo GraphQL server.
+In this tutorial, we will be going through the basic for creating the Query and Mutation in Apollo GraphQL server.
 
 ### To Start
 
