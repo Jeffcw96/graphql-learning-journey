@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc && tsc-alias",
     "start": "nodemon -r tsconfig-paths/register ./src/index.ts",
+    "prestart": "npm run codegen",
     "codegen": "graphql-codegen"
   },
   "keywords": [],
