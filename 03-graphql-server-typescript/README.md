@@ -12,11 +12,11 @@ Final source code is storing in final folder.
 
 ## Basic commands
 
-| Command           | Description                                         |
-| ----------------- | --------------------------------------------------- |
-| `npm run dev`     | Runs dev server with the HMR locally on port `5173` |
-| `npm run build`   | Build your modules into production use              |
-| `npm run codegen` | Generate GraphQL scalar type                        |
+| Command           | Description                            |
+| ----------------- | -------------------------------------- |
+| `npm run start`   | Runs dev server locally on port `4000` |
+| `npm run build`   | Build your modules into production use |
+| `npm run codegen` | Generate GraphQL scalar type           |
 
 # Contributing
 
