@@ -4,7 +4,7 @@ In this tutorial, we will be going through how to ensure our GraphQL resolver is
 
 ### To Start
 
-You may clone the starter folder and follow along with the blog post [here](https://jeffdevslife.com).
+You may clone the starter folder and follow along with the blog post [here](https://jeffdevslife.com/p/organize-your-graphql-modules-codebase-and-create-a-type-safe-environment-in-graphql-resolvers/).
 
 ### Final source code
 
