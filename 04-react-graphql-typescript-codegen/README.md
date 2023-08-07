@@ -2,11 +2,11 @@
 
 In this tutorial, we will be going through the basic for connecting the Query and Mutation from Apollo GraphQL server.
 
-It's highly recommended to clone the folder in [tutorial 1](https://github.com/Jeffcw96/graphlq-learning-journey/tree/master/01-apollo-graphql-server/final) and start the GraphQL server locally while we are going through this tutorial
+It's highly recommended to clone the folder in [GraphQL server typescript type-safe resolver code generator](https://github.com/Jeffcw96/graphlq-learning-journey/tree/master/03-graphql-server-typescript-codegen/final) to operate as a backend service
 
 ### To Start
 
-You may clone the starter folder and follow along with the blog post [here](https://jeffdevslife.com/p/connect-graphql-query-and-mutation-in-react-apollo-client/). What you have to do is fill in the necessary code right below the commented lines.
+You may clone the starter folder and follow along with the blog post [here](https://jeffdevslife.com). What you have to do is fill in the necessary code right below the commented lines.
 
 ### Final source code
 
