@@ -1,17 +1,8 @@
-import { useForm } from 'react-hook-form';
-import './App.css';
-import { useMutation, useQuery } from '@apollo/client';
-import { CREATE_USER, GET_USERS, UPDATE_USER } from './operations/user';
-import { useEffect, useState } from 'react';
-import { CreateUserMutation, CreateUserMutationVariables, GetUsersQuery, GetUsersQueryVariables } from './schema';
-
-type CreateUserInput = {
-  name: string;
-  age: number;
-  nationality: string;
-};
-
-type UpdateUserInput = CreateUserInput & { id: string };
+import { useForm } from "react-hook-form";
+import "./App.css";
+import { useMutation, useQuery } from "@apollo/client";
+import { CREATE_USER, GET_USERS, UPDATE_USER } from "./operations/user";
+import { useEffect, useState } from "react";
 
 function App() {
   const {
@@ -22,21 +13,21 @@ function App() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      id: '',
-      name: '',
+      id: "",
+      name: "",
       age: 0,
-      nationality: '',
+      nationality: "",
     },
   });
   const [responseData, setResponseData] = useState({});
-  const [users, setUsers] = useState<UpdateUserInput[]>([]);
-  const { data, refetch } = useQuery<GetUsersQuery, GetUsersQueryVariables>(GET_USERS);
-  const [createUser] = useMutation<CreateUserMutation, CreateUserMutationVariables>(CREATE_USER);
+  const [users, setUsers] = useState([]);
+  const { data, refetch } = useQuery(GET_USERS);
+  const [createUser] = useMutation(CREATE_USER);
   const [updateUser] = useMutation(UPDATE_USER);
 
-  const onSubmit = async (data: UpdateUserInput) => {
-    const payload: CreateUserInput | UpdateUserInput = {
-      id: '',
+  const onSubmit = async (data) => {
+    const payload = {
+      id: "",
       name: data.name,
       age: Number(data.age),
       nationality: data.nationality,
@@ -69,10 +60,10 @@ function App() {
     const selectedUser = data?.users.find((user) => user.id === userId);
 
     if (selectedUser) {
-      setValue('id', selectedUser.id);
-      setValue('name', selectedUser.name);
-      setValue('age', selectedUser.age);
-      setValue('nationality', selectedUser.nationality);
+      setValue("id", selectedUser.id);
+      setValue("name", selectedUser.name);
+      setValue("age", selectedUser.age);
+      setValue("nationality", selectedUser.nationality);
     }
   };
 
@@ -104,23 +95,33 @@ function App() {
           </div>
           <div className="mb-15">
             <label>ID:</label>
-            <input {...register('id')} type="text" disabled />
+            <input {...register("id")} type="text" disabled />
           </div>
           <div className="mb-15">
             <label htmlFor="name">Name:</label>
-            <input {...register('name', { required: 'Name is required' })} type="text" />
-            <div className="error">{errors.name ? errors.name.message : null}</div>
+            <input
+              {...register("name", { required: "Name is required" })}
+              type="text"
+            />
+            <div className="error">
+              {errors.name ? errors.name.message : null}
+            </div>
           </div>
           <div className="mb-15">
             <label htmlFor="age">Age:</label>
-            <input {...register('age', { required: 'Age is required' })} type="number" />
-            <div className="error">{errors.age ? errors.age.message : null}</div>
+            <input
+              {...register("age", { required: "Age is required" })}
+              type="number"
+            />
+            <div className="error">
+              {errors.age ? errors.age.message : null}
+            </div>
           </div>
           <div className="mb-15">
             <label htmlFor="nationality">Nationality:</label>
             <select
-              {...register('nationality', {
-                required: 'Nationality is required',
+              {...register("nationality", {
+                required: "Nationality is required",
               })}
             >
               <option value="AUSTRALIA">Australia</option>
@@ -129,7 +130,9 @@ function App() {
               <option value="MALAYSIA">Malaysia</option>
               <option value="SINGAPORE">Singapore</option>
             </select>
-            <div className="error">{errors.nationality ? errors.nationality.message : null}</div>
+            <div className="error">
+              {errors.nationality ? errors.nationality.message : null}
+            </div>
           </div>
         </div>
         <div>
